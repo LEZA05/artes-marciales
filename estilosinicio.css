@@ -1,0 +1,110 @@
+*{
+	margin:0px;
+	padding:10px;
+	box-sizing:border-box;/*tamaño de la caja: cuadro de borde*/
+}
+body{
+	margin:0px
+	display:flex;
+	background-image:url("fondoinicio.jpg");
+	background-size:100vw 110vh;
+	background-repeat:no-repeat;
+}
+.capa{
+	width:93%;
+	height:90vh;
+	padding:25px;
+	position:absolute;
+	background:#C0C0C0;
+	opacity:0.3;
+}
+.texto{
+	z-index:1; 		/*manda el texto arriba de la capa*/
+	width:800;
+	height:450px;		
+    	position:fixed;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	padding:40px;
+	margin:20%;
+	margin-top:5%;
+}
+h2{
+	font-family:Century Gothic;
+	font-size:65px;
+	line-height:2; 		/*espacio entre lineas*/
+}
+p{
+	font-family:sans-serif;
+	font-size:20px;
+	line-height:1; 		/*espacio entre ineas*/
+}
+.barra {
+	font-family:arial,helvetica,sans-serif;
+	width:5%;
+	height:5%;		/**Alto y ancho de donde se va a activar cuando pase el mouse**/
+    	position:fixed;		/*Para que este siempre en la misma parte de la pantalla aunque se haga scroll*/
+	transition: .4s all;	/*Tiempo en el que va a transitar la animacion*/	
+	z-index: 1;  		/*este arriba de todo en la pantalla*/
+}
+.barra ul{
+	padding:0px;		/*solucionar espacios no deseados*/
+    	text-align:center;       
+}
+.barra  li{
+   	transition:all .3s;	/*Velocidad de transicion del contenido*/
+    	list-style: none; 	/*quitar el estilo a la lista*/
+}
+.barra a{
+    	text-decoration: none;
+    	font-weight: normal;	/*La letra crece con el menu de esta manera no se va a ver como se ajusta al margen mientras crece*/
+    	list-style:none;
+	transition: .3s all ;	/*Se ocultan los elementos*/
+    	font-size: 0px;
+    	padding:0px;
+}
+.barra  h2{
+    	text-align: center;
+    	color:white;
+    	padding:5px;
+    	padding-bottom:7px;	/*Se oculta el h2*/
+    	font-size:0px;   
+}
+.barra img{
+    	padding-top: 5px;
+    	padding-left: 5px;
+}
+.barra:hover{
+    	width: 250px;		/*Tamaño cuando el cursor señale la barra*/
+   	height:100%;
+    	background:#000;	/*Color*/
+}
+.barra:hover h2{
+        padding:15px;		/*posicion dentro de barra del h2*/
+	font-size:40px;
+}
+.barra:hover a{ 
+    	font-size:15px ;
+    	color:white;
+    	display: block;		/*Se usa el display block para que el enlace respete el margin*/
+    	padding:20px;
+}
+.barra:hover img{
+    	height:0px;		/*Desaparecer la imagen*/
+}
+
+/*animaciones*/
+
+.barra:hover li{
+	border-top:1px solid white;
+	whidth:100%;
+}
+.barra:hover ul:last-of-type{
+	border-bottom:1px solid white;
+}
+.barra:hover a:hover{
+	font-size:25px;
+	padding:30px 0px;
+	background-color:gray;
+}
